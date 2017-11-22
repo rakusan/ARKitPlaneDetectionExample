@@ -67,8 +67,8 @@ public class PlaneDetectionExample : MonoBehaviour {
 			float dot_normal_p0 = Vector3.Dot(normal, p0);
 
 			int inlierCount = 0;
-			foreach (Vector3 p in pointCloudData) {
-				float distance = Mathf.Abs (Vector3.Dot (normal, p) - dot_normal_p0);
+			foreach (Vector3 q in pointCloudData) {
+				float distance = Mathf.Abs (Vector3.Dot (normal, q) - dot_normal_p0);
 				if (distance < threshold) {
 					++inlierCount;
 				}
