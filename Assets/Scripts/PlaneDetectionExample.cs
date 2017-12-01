@@ -111,11 +111,12 @@ public class PlaneDetectionExample : MonoBehaviour {
 		}
 
 		// 行列と逆行列を作り、逆行列の一番右の列を取り出す
+		int n = inliers.Count ();
 		Matrix4x4 matrix = new Matrix4x4 (
-			new Vector4 (A, B, C, 0),
-			new Vector4 (B, E, F, 0),
-			new Vector4 (C, F, n, 0),
-			new Vector4 (-D, -G, -H, 1));
+			new Vector4 ( A,  B,  C,  0),
+			new Vector4 ( B,  E,  F,  0),
+			new Vector4 ( C,  F,  n,  0),
+			new Vector4 (-D, -G, -H,  1));
 		Vector3 solution = matrix.inverse.GetColumn(3);
 		float a = solution.x;
 		float b = solution.y;
